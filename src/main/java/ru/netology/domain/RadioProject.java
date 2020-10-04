@@ -11,33 +11,33 @@ public class RadioProject {
     private boolean on;
 
     public void increaseStation() {
-        if (currentStation == maxStation){
+        if (currentStation == maxStation) {
             this.currentStation = minStation;
             return;
         }
-        currentStation ++;
+        currentStation++;
     }
 
     public void decreaseStation() {
-        if (currentStation == minStation){
+        if (currentStation == minStation) {
             this.currentStation = maxStation;
             return;
         }
-        currentStation --;
+        currentStation--;
     }
 
     public void increaseVolume() {
         if (currentVolume == maxVolume) {
             return;
         }
-        currentVolume ++;
+        currentVolume++;
     }
 
     public void decreaseVolume() {
-        if (currentVolume == minVolume){
+        if (currentVolume == minVolume) {
             return;
         }
-        currentVolume --;
+        currentVolume--;
     }
 
     public int getMaxStation() {
@@ -62,7 +62,7 @@ public class RadioProject {
 
     public void setCurrentStation(int currentStation) {
 
-        if (currentStation > maxStation){
+        if (currentStation > maxStation) {
             this.currentStation = maxStation;
             return;
         }

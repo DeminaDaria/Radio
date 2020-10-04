@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class RadioProjectTest {
 
     @Test
-    public  void shouldClickNextRadioStation() {
+    public void shouldClickNextRadioStation() {
         RadioProject radioProject = new RadioProject();
 
         radioProject.setCurrentStation(3);
@@ -19,7 +19,7 @@ class RadioProjectTest {
     }
 
     @Test
-    public  void shouldClickNextRadioStationMax() {
+    public void shouldClickNextRadioStationMax() {
         RadioProject radioProject = new RadioProject();
 
         radioProject.setCurrentStation(9);
@@ -31,7 +31,7 @@ class RadioProjectTest {
     }
 
     @Test
-    public  void shouldClickPrevRadioStation() {
+    public void shouldClickPrevRadioStation() {
         RadioProject radioProject = new RadioProject();
 
         radioProject.setCurrentStation(3);
@@ -43,7 +43,7 @@ class RadioProjectTest {
     }
 
     @Test
-    public  void shouldClickPrevRadioStationMin() {
+    public void shouldClickPrevRadioStationMin() {
         RadioProject radioProject = new RadioProject();
 
         radioProject.setOn(true);
@@ -54,7 +54,7 @@ class RadioProjectTest {
     }
 
     @Test
-    public  void shouldIncreaseCurrentVolume() {
+    public void shouldIncreaseCurrentVolume() {
         RadioProject radioProject = new RadioProject();
 
         radioProject.setCurrentVolume(6);
@@ -66,7 +66,7 @@ class RadioProjectTest {
     }
 
     @Test
-    public  void shouldIncreaseCurrentVolumeMax() {
+    public void shouldIncreaseCurrentVolumeMax() {
         RadioProject radioProject = new RadioProject();
 
         radioProject.setCurrentVolume(10);
@@ -78,7 +78,7 @@ class RadioProjectTest {
     }
 
     @Test
-    public  void shouldDecreaseCurrentVolume() {
+    public void shouldDecreaseCurrentVolume() {
         RadioProject radioProject = new RadioProject();
 
         radioProject.setCurrentVolume(4);
@@ -90,7 +90,7 @@ class RadioProjectTest {
     }
 
     @Test
-    public  void shouldDecreaseCurrentVolumeMin() {
+    public void shouldDecreaseCurrentVolumeMin() {
         RadioProject radioProject = new RadioProject();
 
         radioProject.setOn(true);
@@ -107,7 +107,7 @@ class RadioProjectTest {
         radioProject.setCurrentStation(7);
         radioProject.setOn(true);
 
-        assertEquals(7,radioProject.getCurrentStation());
+        assertEquals(7, radioProject.getCurrentStation());
 
     }
 
@@ -118,7 +118,7 @@ class RadioProjectTest {
         radioProject.setCurrentStation(10);
         radioProject.setOn(true);
 
-        assertEquals(9,radioProject.getCurrentStation());
+        assertEquals(9, radioProject.getCurrentStation());
 
     }
 
