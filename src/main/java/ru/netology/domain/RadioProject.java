@@ -66,8 +66,13 @@ public class RadioProject {
             this.currentStation = maxStation;
             return;
         }
-
+        if (currentStation < minStation) {
+            this.currentStation = minStation;
+            return;
+        }
+        // здесь уверены, что все проверки прошли
         this.currentStation = currentStation;
+
     }
 
     public int getMaxVolume() {
@@ -91,6 +96,16 @@ public class RadioProject {
     }
 
     public void setCurrentVolume(int currentVolume) {
+
+        if (currentVolume > maxVolume) {
+            this.currentVolume = maxVolume;
+            return;
+        }
+        if (currentVolume < minVolume) {
+            this.currentVolume = minVolume;
+            return;
+        }
+
         this.currentVolume = currentVolume;
     }
 

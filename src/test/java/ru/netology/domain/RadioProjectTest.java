@@ -112,13 +112,46 @@ class RadioProjectTest {
     }
 
     @Test
-    public void shouldSetNumberStationRemoteControlInvalid() {
+    public void shouldSetNumberStationRemoteControlInvalidMax() {
         RadioProject radioProject = new RadioProject();
 
         radioProject.setCurrentStation(10);
         radioProject.setOn(true);
 
         assertEquals(9, radioProject.getCurrentStation());
+
+    }
+
+    @Test
+    public void shouldSetNumberStationRemoteControlInvalidMin() {
+        RadioProject radioProject = new RadioProject();
+
+        radioProject.setCurrentStation(-1);
+        radioProject.setOn(true);
+
+        assertEquals(0, radioProject.getCurrentStation());
+
+    }
+
+    @Test
+    public void shouldSetVolumeInvalidMax() {
+        RadioProject radioProject = new RadioProject();
+
+        radioProject.setCurrentVolume(11);
+        radioProject.setOn(true);
+
+        assertEquals(10, radioProject.getCurrentVolume());
+
+    }
+
+    @Test
+    public void shouldSetVolumeInvalidMin() {
+        RadioProject radioProject = new RadioProject();
+
+        radioProject.setCurrentVolume(-1);
+        radioProject.setOn(true);
+
+        assertEquals(0, radioProject.getCurrentVolume());
 
     }
 
