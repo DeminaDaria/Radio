@@ -13,7 +13,7 @@ class RadioProjectTest {
         radioProject.setCurrentStation(3);
         radioProject.setOn(true);
 
-        radioProject.increaseStation();
+        radioProject.increaseStationNext();
 
         assertEquals(4, radioProject.getCurrentStation());
     }
@@ -25,7 +25,7 @@ class RadioProjectTest {
         radioProject.setCurrentStation(9);
         radioProject.setOn(true);
 
-        radioProject.increaseStation();
+        radioProject.increaseStationNext();
 
         assertEquals(0, radioProject.getCurrentStation());
     }
@@ -37,7 +37,7 @@ class RadioProjectTest {
         radioProject.setCurrentStation(3);
         radioProject.setOn(true);
 
-        radioProject.decreaseStation();
+        radioProject.decreaseStationPrev();
 
         assertEquals(2, radioProject.getCurrentStation());
     }
@@ -48,7 +48,7 @@ class RadioProjectTest {
 
         radioProject.setOn(true);
 
-        radioProject.decreaseStation();
+        radioProject.decreaseStationPrev();
 
         assertEquals(9, radioProject.getCurrentStation());
     }

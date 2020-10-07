@@ -10,7 +10,7 @@ public class RadioProject {
     private int currentVolume;
     private boolean on;
 
-    public void increaseStation() {
+    public void increaseStationNext() {
         if (currentStation == maxStation) {
             this.currentStation = minStation;
             return;
@@ -18,7 +18,7 @@ public class RadioProject {
         currentStation++;
     }
 
-    public void decreaseStation() {
+    public void decreaseStationPrev() {
         if (currentStation == minStation) {
             this.currentStation = maxStation;
             return;
