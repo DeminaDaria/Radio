@@ -51,7 +51,6 @@ class RadioProjectTest {
         radioProject.setCurrentStation(7);
 
         assertEquals(7, radioProject.getCurrentStation());
-
     }
 
     @Test
@@ -60,7 +59,6 @@ class RadioProjectTest {
         radioProject.setCurrentStation(15);
 
         assertEquals(14, radioProject.getCurrentStation());
-
     }
 
     @Test
@@ -69,7 +67,6 @@ class RadioProjectTest {
         radioProject.setCurrentStation(-1);
 
         assertEquals(0, radioProject.getCurrentStation());
-
     }
 
     @Test
@@ -125,7 +122,6 @@ class RadioProjectTest {
         radioProject.setCurrentVolume(101);
 
         assertEquals(100, radioProject.getCurrentVolume());
-
     }
 
     @Test
@@ -134,6 +130,5 @@ class RadioProjectTest {
         radioProject.setCurrentVolume(-1);
 
         assertEquals(0, radioProject.getCurrentVolume());
-
     }
 }
