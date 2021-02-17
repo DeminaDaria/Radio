@@ -5,13 +5,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class RadioProjectTest {
+    RadioProject radioProject = new RadioProject(14, true);
 
     @Test
     public void shouldClickNextRadioStation() {
-        RadioProject radioProject = new RadioProject();
 
         radioProject.setCurrentStation(3);
-        radioProject.setOn(true);
 
         radioProject.increaseStationNext();
 
@@ -20,10 +19,8 @@ class RadioProjectTest {
 
     @Test
     public void shouldClickNextRadioStationMax() {
-        RadioProject radioProject = new RadioProject();
 
-        radioProject.setCurrentStation(9);
-        radioProject.setOn(true);
+        radioProject.setCurrentStation(14);
 
         radioProject.increaseStationNext();
 
@@ -32,10 +29,8 @@ class RadioProjectTest {
 
     @Test
     public void shouldClickPrevRadioStation() {
-        RadioProject radioProject = new RadioProject();
 
         radioProject.setCurrentStation(3);
-        radioProject.setOn(true);
 
         radioProject.decreaseStationPrev();
 
@@ -44,68 +39,16 @@ class RadioProjectTest {
 
     @Test
     public void shouldClickPrevRadioStationMin() {
-        RadioProject radioProject = new RadioProject();
-
-        radioProject.setOn(true);
 
         radioProject.decreaseStationPrev();
 
-        assertEquals(9, radioProject.getCurrentStation());
-    }
-
-    @Test
-    public void shouldIncreaseCurrentVolume() {
-        RadioProject radioProject = new RadioProject();
-
-        radioProject.setCurrentVolume(6);
-        radioProject.setOn(true);
-
-        radioProject.increaseVolume();
-
-        assertEquals(7, radioProject.getCurrentVolume());
-    }
-
-    @Test
-    public void shouldIncreaseCurrentVolumeMax() {
-        RadioProject radioProject = new RadioProject();
-
-        radioProject.setCurrentVolume(10);
-        radioProject.setOn(true);
-
-        radioProject.increaseVolume();
-
-        assertEquals(10, radioProject.getCurrentVolume());
-    }
-
-    @Test
-    public void shouldDecreaseCurrentVolume() {
-        RadioProject radioProject = new RadioProject();
-
-        radioProject.setCurrentVolume(4);
-        radioProject.setOn(true);
-
-        radioProject.decreaseVolume();
-
-        assertEquals(3, radioProject.getCurrentVolume());
-    }
-
-    @Test
-    public void shouldDecreaseCurrentVolumeMin() {
-        RadioProject radioProject = new RadioProject();
-
-        radioProject.setOn(true);
-
-        radioProject.decreaseVolume();
-
-        assertEquals(0, radioProject.getCurrentVolume());
+        assertEquals(14, radioProject.getCurrentStation());
     }
 
     @Test
     public void shouldSetNumberStationRemoteControlValid() {
-        RadioProject radioProject = new RadioProject();
 
         radioProject.setCurrentStation(7);
-        radioProject.setOn(true);
 
         assertEquals(7, radioProject.getCurrentStation());
 
@@ -113,47 +56,85 @@ class RadioProjectTest {
 
     @Test
     public void shouldSetNumberStationRemoteControlInvalidMax() {
-        RadioProject radioProject = new RadioProject();
 
-        radioProject.setCurrentStation(10);
-        radioProject.setOn(true);
+        radioProject.setCurrentStation(15);
 
-        assertEquals(9, radioProject.getCurrentStation());
+        assertEquals(14, radioProject.getCurrentStation());
 
     }
 
     @Test
     public void shouldSetNumberStationRemoteControlInvalidMin() {
-        RadioProject radioProject = new RadioProject();
 
         radioProject.setCurrentStation(-1);
-        radioProject.setOn(true);
 
         assertEquals(0, radioProject.getCurrentStation());
 
     }
 
     @Test
+    public void shouldInitFieldsVolume() {
+        assertEquals(100, radioProject.getMaxVolume());
+        assertEquals(0, radioProject.getMinVolume());
+        assertEquals(0, radioProject.getCurrentVolume());
+    }
+
+    @Test
+    public void shouldIncreaseCurrentVolume() {
+
+        radioProject.setCurrentVolume(50);
+
+        radioProject.increaseVolume();
+
+        assertEquals(51, radioProject.getCurrentVolume());
+    }
+
+    @Test
+    public void shouldIncreaseCurrentVolumeMax() {
+
+        radioProject.setCurrentVolume(100);
+
+        radioProject.increaseVolume();
+
+        assertEquals(100, radioProject.getCurrentVolume());
+    }
+
+    @Test
+    public void shouldDecreaseCurrentVolume() {
+
+        radioProject.setCurrentVolume(50);
+
+        radioProject.decreaseVolume();
+
+        assertEquals(49, radioProject.getCurrentVolume());
+    }
+
+    @Test
+    public void shouldDecreaseCurrentVolumeMin() {
+
+        radioProject.setCurrentVolume(0);
+
+        radioProject.decreaseVolume();
+
+        assertEquals(0, radioProject.getCurrentVolume());
+    }
+
+    @Test
     public void shouldSetVolumeInvalidMax() {
-        RadioProject radioProject = new RadioProject();
 
-        radioProject.setCurrentVolume(11);
-        radioProject.setOn(true);
+        radioProject.setCurrentVolume(101);
 
-        assertEquals(10, radioProject.getCurrentVolume());
+        assertEquals(100, radioProject.getCurrentVolume());
 
     }
 
     @Test
     public void shouldSetVolumeInvalidMin() {
-        RadioProject radioProject = new RadioProject();
 
         radioProject.setCurrentVolume(-1);
-        radioProject.setOn(true);
 
         assertEquals(0, radioProject.getCurrentVolume());
 
     }
-
 
 }
